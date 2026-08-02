@@ -29,7 +29,7 @@ The purpose of this repository is to document my learning process, improve my pe
 | Blue | Easy | [View](./Blue%20TryHackMe%20Writeup/README.md) |
 | Bounty Hacker | Easy | [View](./Bounty%20Hacker%20THM%20Writeup/README.md) |
 | Simple CTF | Easy | [View](./Simple%20CTF%20TryHackMe%20Writeup/README.md) |
-
+| CyberHeroes | Easy | [View](./CyberHeroes/README.md) |
 ---
 
 ## 🛠️ Skills Practiced
