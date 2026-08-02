@@ -4,7 +4,7 @@ This README file contains my walkthrough of the Cap machine from Hack The Box (L
 This write-up documents my journey, key steps, and the lessons I learned while solving the machine.
 I used Kali Linux, as it comes with a wide range of preinstalled tools for penetration testing.<br><br>
 
-<img width="733" height="619" alt="image" src="https://github.com/user-attachments/assets/f4e87303-3331-4e79-856f-f0ea37b0b8d9" /><br><br>
+<img width="733" height="619" alt="image" src="images/cap 1.png" /><br><br>
 
 Tools Used:<br>
   •	Nmap <br>
@@ -12,10 +12,10 @@ Tools Used:<br>
   •	LinPeas<br>
 
 I performed a basic nmap scan to search for any open ports. I found out that port 21 (ftp), 22 (ssh) and 80 (http) were open.<br><br>
-<img width="919" height="439" alt="image" src="https://github.com/user-attachments/assets/838a00d9-d672-4503-9516-ce828ed2452c" /><br><br>
+<img width="919" height="439" alt="image" src="images/cap2.png" /><br><br>
 
 Copy-pasting IP address in firefox led to this page:<br><br>
-<img width="939" height="500" alt="image" src="https://github.com/user-attachments/assets/50a302c7-3a4f-4342-9446-b89ba05b9ccb" /><br><br>
+<img width="939" height="500" alt="image" src="images/cap3.png" /><br><br>
 
 After exploring the dashboard, I came across these options:<br>
 •	Security Snapshot (5 Second PCAP + Analysis)<br>
@@ -23,7 +23,7 @@ After exploring the dashboard, I came across these options:<br>
 •	Network status<br><br>
 
 I explored every option and found this in Security Snapshot:<br><br>
-<img width="939" height="461" alt="image" src="https://github.com/user-attachments/assets/ed0543df-6ed4-4d4f-a758-515919b2112f" /><br><br>
+<img width="939" height="461" alt="image" src="images/cap4.png" /><br><br>
 
 When I change the user id in the address bar, I noticed that the number of data packets also changed. This hinted that I can switch between different users on the system. 
 I started with User ID 0, which showed 72 packets – 62 of them were IP and TCP packets. When I clicked the download button, it saved a Wireshark capture file named “0.pcap”.<br><br>
@@ -74,6 +74,6 @@ So, adjusting it for the target machine’s Python binary, the final payload bec
   
 I executed it in the victim’s machine. BOOM!! I am the root user.<br><br>
 
-<img width="940" height="318" alt="image" src="https://github.com/user-attachments/assets/d624e3fc-3f26-47fe-82cb-c9a598313691" /><br><br>
+<img width="940" height="318" alt="image" src="images/cap5.png" /><br><br>
 
 So, that was CAP!
