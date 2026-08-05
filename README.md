@@ -32,6 +32,29 @@ The purpose of this repository is to document my learning process, improve my pe
 | CyberHeroes | Easy | [View](./CyberHeroes/README.md) |
 ---
 
+### 🐧 OverTheWire
+
+| Wargame | Levels | Writeup |
+|---------|--------|----------|
+| Bandit | 0–34 | [View](./Bandit/README.md) |
+
+---
+
+## 📂 Repository Structure
+
+```
+Security-Writeups/
+├── Bandit/
+├── Blue TryHackMe Writeup/
+├── Bounty Hacker THM Writeup/
+├── Cap HTB Writeup/
+├── CyberHeroes/
+├── Simple CTF TryHackMe Writeup/
+├── TwoMillionHTB/
+└── README.md
+```
+
+---
 ## 🛠️ Skills Practiced
 
 - Information Gathering
@@ -49,14 +72,33 @@ The purpose of this repository is to document my learning process, improve my pe
 
 - Nmap
 - Gobuster
-- ffuf
 - Burp Suite
 - Netcat
 - Hydra
-- John the Ripper
 - LinPEAS
 - SQLMap
 
 ---
 
-More writeups will be added as I continue learning.
+## 📈 Progress
+
+This repository is actively maintained as I continue solving new machines, CTFs, and wargames. New writeups will be added regularly to document my learning journey and improve my practical cybersecurity skills.
+
+---
+
+## 📖 References
+
+- Hack The Box
+- TryHackMe
+- OverTheWire
+- Official documentation of the tools used where applicable
+
+---
+
+## ⚠️ Disclaimer
+
+These writeups are created **for educational and documentation purposes only**. They are based on intentionally vulnerable machines and labs provided by their respective platforms. Do **not** attempt to use these techniques against systems without proper authorization.
+
+---
+
+⭐ More writeups will be added as I continue learning. If you find this repository helpful, consider giving it a star!
