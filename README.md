@@ -31,6 +31,7 @@ The purpose of this repository is to document my learning process, improve my pe
 | Simple CTF | Easy | [View](./Simple%20CTF%20TryHackMe%20Writeup/README.md) |
 | CyberHeroes | Easy | [View](./CyberHeroes/README.md) |
 | Dreaming | Easy | [View](./Dreaming%20THM%20Challenge%20Writeup/README.md) |
+| Fool's Mate | Easy | [View](./Fool's%20Mate/README.md) |
 ---
 
 ### 🐧 OverTheWire
@@ -52,7 +53,8 @@ Security-Writeups/
 ├── CyberHeroes/
 ├── Simple CTF TryHackMe Writeup/
 ├── TwoMillionHTB/
-├── Dreaming/
+├── Dreaming THM Challenge Writeup/
+├── Fool's Mate/
 └── README.md
 ```
 
